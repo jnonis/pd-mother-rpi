@@ -1,0 +1,37 @@
+#N canvas 765 199 450 300 10;
+#X obj 104 105 vu 15 120 empty empty -1 -8 0 10 -66577 -262144 1 0
+;
+#X obj 122 105 vu 15 120 empty empty -1 -8 0 10 -66577 -262144 1 0
+;
+#X obj 143 105 vu 15 120 empty empty -1 -8 0 10 -66577 -262144 1 0
+;
+#X obj 161 105 vu 15 120 empty empty -1 -8 0 10 -66577 -262144 1 0
+;
+#X obj 89 14 adc~;
+#X obj 75 44 env~;
+#X obj 75 65 - 100;
+#X obj 113 44 env~;
+#X obj 113 65 - 100;
+#X obj 157 40 env~;
+#X obj 258 40 env~;
+#X obj 161 64 - 100;
+#X obj 157 15 catch~ postVolL;
+#X obj 258 15 catch~ postVolR;
+#X obj 258 61 - 100;
+#X connect 4 0 5 0;
+#X connect 4 1 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 0 1;
+#X connect 6 0 0 0;
+#X connect 7 0 8 0;
+#X connect 8 0 1 0;
+#X connect 8 0 1 1;
+#X connect 9 0 11 0;
+#X connect 10 0 14 0;
+#X connect 11 0 2 1;
+#X connect 11 0 2 0;
+#X connect 12 0 9 0;
+#X connect 13 0 10 0;
+#X connect 14 0 3 1;
+#X connect 14 0 3 0;
+#X coords 0 -1 1 1 80 130 2 100 100;

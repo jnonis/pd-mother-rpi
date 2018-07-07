@@ -1,0 +1,61 @@
+#N canvas 224 114 877 323 10;
+#X obj 239 132 vsl 15 128 0 1 0 0 knob1 knob1 empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 281 132 vsl 15 128 0 1 0 0 knob2 knob2 empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 327 132 vsl 15 128 0 1 0 0 knob3 knob3 empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 373 132 vsl 15 128 0 1 0 0 knob4 knob4 empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 758 132 vsl 15 128 0 1 0 0 exp exp empty 0 -9 0 10 -262144 -1
+-1 0 1;
+#X obj 265 279 tgl 15 0 aux aux empty 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 759 278 tgl 15 0 fs fs empty 17 7 0 10 -262144 -1 -1 0 1;
+#X text 284 278 aux;
+#X obj 818 132 vsl 15 128 0 1 0 0 vol vol empty 0 -9 0 10 -262144 -1
+-1 12700 1;
+#X text 226 108 knob 1;
+#X text 270 108 knob 2;
+#X text 314 108 knob 3;
+#X text 358 108 knob 4;
+#X text 750 108 pedal;
+#X text 805 108 volume;
+#X text 782 277 foot switch;
+#X obj 689 131 control-selection;
+#X text 733 94 expression;
+#X obj 20 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 219 12 Mother Patch. This patch is the bridge between the hardware
+and Pd. Without it open the Organelle does not work. It should not
+need to be edited under most circumstances.;
+#X text 417 68 The following values are available in your patch:;
+#N canvas 432 163 404 168 META 0;
+#X text 12 113 VERSION 1.2;
+#X text 12 5 KEYWORDS Mother;
+#X text 12 45 DESCRIPTION This patch bridges Organelle hardware and
+Pd;
+#X text 12 89 WEBSITE http://critterandguitari.com;
+#X text 12 69 AUTHOR Critter & Guitari;
+#X text 12 25 LICENSE BSD;
+#X restore 18 13 pd META;
+#X obj 20 164 init-patch;
+#X obj 20 217 audio-io;
+#X obj 20 237 message-io;
+#X obj 20 257 midi-io;
+#X obj 20 277 menu-control;
+#X text 40 139 load;
+#X obj 100 139 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 120 139 save;
+#X msg 100 163 /saveState 1;
+#X obj 100 185 s oscIn;
+#X obj 20 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 40 61 open;
+#X obj 20 86 load-patch;
+#X obj 238 278 display-led;
+#X connect 18 0 22 0;
+#X connect 28 0 30 0;
+#X connect 30 0 31 0;
+#X connect 32 0 34 0;
+#X coords 0 323 1 322 85 60 0;
