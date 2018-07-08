@@ -1,4 +1,4 @@
-#N canvas 224 114 877 323 10;
+#N canvas 493 207 877 323 10;
 #X obj 239 132 vsl 15 128 0 1 0 0 knob1 knob1 empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 281 132 vsl 15 128 0 1 0 0 knob2 knob2 empty 0 -9 0 10 -262144
