@@ -2,7 +2,7 @@
 
 echo Initializing Patch
 
-PATCH_HOME=$1
+PATCH_HOME="$1"
 echo Patch Home: $PATCH_HOME
 
 mkdir -p /tmp/patch
