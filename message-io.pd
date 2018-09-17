@@ -182,7 +182,7 @@ closed, f 66;
 #X connect 5 0 3 1;
 #X connect 6 0 3 0;
 #X restore 381 523 pd footSwitch;
-#N canvas 28 108 1252 622 analog 0;
+#N canvas 28 45 1252 622 analog 1;
 #X obj 868 278 s vol;
 #X obj 148 175 unpack 0 0 0 0 0 0, f 129;
 #X obj 145 375 s knob1;
