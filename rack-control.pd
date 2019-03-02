@@ -1,0 +1,106 @@
+#N struct display-plot-template float x float y float px1 float py1
+float px2 float py2 float color;
+#N struct display-lines-template float x float y symbol s1 symbol s2
+symbol s3 symbol s4 symbol s5 float l float v;
+#N canvas 540 57 671 582 10;
+#X obj 11 204 vsl 40 170 0 1 0 0 knob1 knob1 empty 0 -9 0 10 -262144
+-1 -1 7500 1;
+#X obj 62 204 vsl 40 170 0 1 0 0 knob2 knob2 empty 0 -9 0 10 -262144
+-1 -1 11976 1;
+#X obj 113 204 vsl 40 170 0 1 0 0 knob3 knob3 empty 0 -9 0 10 -262144
+-1 -1 8376 1;
+#X obj 164 204 vsl 40 170 0 1 0 0 knob4 knob4 empty 0 -9 0 10 -262144
+-1 -1 6900 1;
+#X obj 215 204 vsl 40 170 0 1 0 0 exp exp empty 0 -9 0 10 -262144 -1
+-1 0 1;
+#X obj 87 412 tgl 48 0 aux aux empty 17 7 0 10 -262144 -1 -1 0 1;
+#X obj 235 412 tgl 48 0 fs fs empty 17 7 0 10 -262144 -1 -1 0 1;
+#X text 58 390 aux;
+#X obj 266 204 vsl 40 170 0 1 0 0 vol vol empty 0 -9 0 10 -262144 -1
+-1 16900 1;
+#X text 11 180 knob 1;
+#X text 62 180 knob 2;
+#X text 113 180 knob 3;
+#X text 164 180 knob 4;
+#X text 266 179 volume;
+#X text 194 391 foot switch;
+#X obj 206 11 bng 48 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 326 13 init-patch;
+#X obj 522 11 audio-io;
+#X obj 522 31 message-io;
+#X obj 522 51 midi-io;
+#X obj 522 71 menu-control;
+#X text 215 27 load;
+#X obj 261 11 bng 48 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 270 27 save;
+#X msg 396 13 /saveState 1;
+#X obj 396 35 s oscIn;
+#X obj 8 11 bng 48 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 18 27 open;
+#X obj 327 67 load-patch;
+#X text 225 179 exp;
+#X obj 87 390 display-led;
+#X obj 180 412 bng 48 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 32 412 bng 48 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 335 199 0;
+#X msg 335 228 1;
+#X obj 335 257 s enc;
+#X msg 403 171 1;
+#X obj 403 197 s encbut;
+#X obj 205 128 bng 48 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 205 75 bng 48 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 220 90 up;
+#X text 214 143 down;
+#X obj 260 128 tgl 48 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 260 75 bng 48 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 265 91 select;
+#X obj 8 87 rack-display-audio;
+#X obj 60 89 rack-display-oled;
+#X msg 331 413 1;
+#X msg 366 435 0;
+#X obj 331 458 s fs;
+#X obj 366 413 delay 250 1 msec;
+#X msg 331 344 1;
+#X msg 366 366 0;
+#X obj 366 344 delay 250 1 msec;
+#X obj 331 389 s aux;
+#X msg 467 152 1;
+#X msg 502 174 0;
+#X obj 502 152 delay 250 1 msec;
+#X obj 467 197 s encbut;
+#X text 91 13 organelle rack;
+#X connect 15 0 16 0;
+#X connect 22 0 24 0;
+#X connect 24 0 25 0;
+#X connect 26 0 28 0;
+#X connect 31 0 47 0;
+#X connect 31 0 50 0;
+#X connect 32 0 51 0;
+#X connect 32 0 53 0;
+#X connect 33 0 35 0;
+#X connect 34 0 35 0;
+#X connect 36 0 37 0;
+#X connect 38 0 34 0;
+#X connect 39 0 33 0;
+#X connect 42 0 36 0;
+#X connect 43 0 55 0;
+#X connect 43 0 57 0;
+#X connect 47 0 49 0;
+#X connect 48 0 49 0;
+#X connect 50 0 48 0;
+#X connect 51 0 54 0;
+#X connect 52 0 54 0;
+#X connect 53 0 52 0;
+#X connect 55 0 58 0;
+#X connect 56 0 58 0;
+#X connect 57 0 56 0;
+#X coords 0 0 320 480 320 480 2 0 0;
