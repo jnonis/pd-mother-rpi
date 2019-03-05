@@ -1,8 +1,10 @@
-#N struct display-plot-template float x float y float px1 float py1
-float px2 float py2 float color;
 #N struct display-lines-template float x float y symbol s1 symbol s2
 symbol s3 symbol s4 symbol s5 float l float v;
-#N canvas 751 25 450 300 10;
-#X obj 0 0 rack-display-plot;
+#N struct 3997-template-drawthings float x float y float c float cf
+float w;
+#N struct 3998-template-drawthings float x float y float c float cf
+float w;
+#N canvas 128 227 450 300 10;
 #X obj 0 0 rack-display-lines;
+#X obj 0 0 rack-display-plot-v2;
 #X coords 0 0 138 80 138 80 2 0 0;
